@@ -1,0 +1,118 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		"eslint:recommended",
+		"airbnb-typescript",
+		"plugin:functional/external-recommended",
+		"plugin:functional/recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"plugins": [
+		"functional",
+		"react-hooks",
+		"@typescript-eslint"
+	],
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	},
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"globals": {
+		"__DEV__": "readonly"
+	},
+	"settings": {
+		"import/resolver": {
+			"alias": {
+				"map": [
+					[
+						"@constants",
+						"./constants"
+					],
+					[
+						"@utils",
+						"./src/utils"
+					],
+					[
+						"@assets",
+						"./src/assets"
+					],
+					[
+						"@machine",
+						"./src/machine"
+					],
+					[
+						"@store",
+						"./src/machine/store"
+					],
+					[
+						"@type",
+						"./src/type"
+					]
+				],
+				"extensions": [
+					".ts",
+					".tsx",
+					".d.ts",
+					".js",
+					".jsx",
+					".json"
+				]
+			}
+		}
+	},
+	"rules": {
+		"linebreak-style": [
+			"error",
+			"unix"
+		],
+		"quotes": [
+			"error",
+			"single"
+		],
+		"@typescript-eslint/semi": [
+			"error",
+			"never"
+		],
+		"functional/functional-parameters": 0,
+		"functional/prefer-readonly-type": 0,
+		"functional/no-return-void": 0,
+		"functional/no-mixed-type": 0,
+		"import/prefer-default-export": 0,
+		"no-loop-func": 0,
+		"@typescript-eslint/explicit-function-return-type": 0,
+		"@typescript-eslint/no-use-before-define": 0,
+		"@typescript-eslint/ban-ts-ignore": 0,
+		"@typescript-eslint/no-unused-expressions": 0,
+		"@typescript-eslint/no-unused-vars": [
+			"error",
+			{
+				"vars": "all",
+				"args": "after-used",
+				"ignoreRestSiblings": false,
+				"argsIgnorePattern": "^_",
+				"varsIgnorePattern": "^React|^_"
+			}
+		],
+		"no-underscore-dangle": 0,
+		"no-nested-ternary": 0,
+		"functional/no-expression-statement": [
+			"error",
+			{
+				"ignorePattern": [
+					"^mutable.*."
+				]
+			}
+		],
+		"functional/immutable-data": [
+			"error",
+			{
+				"ignorePattern": [
+					"^mutable.*."
+				]
+			}
+		]
+	}
+}
