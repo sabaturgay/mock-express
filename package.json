@@ -1,7 +1,7 @@
 {
-	"name": "node-starter-kit",
+	"name": "mock-express",
 	"version": "1.0.0",
-	"description": "node project",
+	"description": "create mock express",
 	"main": "src/index.ts",
 	"scripts": {
 		"test": "jest",
